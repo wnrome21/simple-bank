@@ -3,15 +3,16 @@ package db
 import (
 	"context"
 	"testing"
-	"github.com/stretchr/testify/require"
+	"workspace-golang/simple-bank/util"
 
+	"github.com/stretchr/testify/require"
 )
 
 func TestCreateAccount(t *testing.T) {
 	arg := CreateAccountParams {
-		Owner:    , // randomly generated?
-		Balance:  ,
-		Currency: ,
+		Owner:    util.RandomOwner(), // randomly generated?
+		Balance:  util.RandomMoney(),
+		Currency: util.RandomCurrency(),
 	}
 
 	account, err := testQueries.CreateAccount(context.Background(), arg)

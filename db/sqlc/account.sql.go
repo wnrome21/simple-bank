@@ -42,7 +42,7 @@ const deleteAcccount = `-- name: DeleteAcccount :exec
 DELETE FROM accounts WHERE id = $1
 `
 
-func (q *Queries) DeleteAcccount(ctx context.Context, id int64) error {
+func (q *Queries) DeleteAccount(ctx context.Context, id int64) error {
 	_, err := q.db.ExecContext(ctx, deleteAcccount, id)
 	return err
 }
